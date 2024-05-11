@@ -2,7 +2,7 @@
 
 ## Project Description
 
-Proiectul consta in monitorizarea nivelului de umiditate a aerului folosind o placuta Arduino UNO, un modul senzor de temperatura si umiditate DHT 11 si doua leduri. Valorile umiditatii sunt actualizate in fiecare secunda. O umiditate cu valoare mai mare de 65% determina luminarea unui led de culoare rosie, iar o umiditate cu valoare mai mica de 65% determina luminarea unui led de culoare verde.
+The project involves monitoring the air humidity level using an Arduino UNO board, a DHT11 temperature and humidity sensor module, and two LEDs. The humidity values are updated every second. A humidity value above 65% triggers the illumination of a red LED, while a humidity value below 65% triggers the illumination of a green LED.
 
 ## Schematics
 
@@ -10,36 +10,38 @@ Proiectul consta in monitorizarea nivelului de umiditate a aerului folosind o pl
 
 ## Pre-requisites
 ### Componente hardware
-1 x placuta Arduino UNO  [Arduino Uno.pdf](https://github.com/at-cs-ubbcluj-ro/individual-project-mbir2969/files/11178687/Arduino.Uno.pdf)            
-7 x fire tata-tata  
-2 x LED-uri de 5 mm 
-1 x modul senzor de umiditate DHT11         [DHT11-Datasheet.pdf](https://github.com/at-cs-ubbcluj-ro/individual-project-mbir2969/files/11178689/DHT11-Datasheet.pdf)   
-1 x cablu USB 3.0 la USB B de conectare la o sursa de energie     
-1 x breadboard cu 400 puncte     
-2 x rezistente de 10k ohmi      
+1 x Arduino UNO board [Arduino Uno.pdf](https://github.com/at-cs-ubbcluj-ro/individual-project-mbir2969/files/11178687/Arduino.Uno.pdf)
+7 x male-to-male jumper wires
+2 x 5 mm LEDs
+1 x DHT11 humidity sensor module [DHT11-Datasheet.pdf](https://github.com/at-cs-ubbcluj-ro/individual-project-mbir2969/files/11178689/DHT11-Datasheet.pdf)
+1 x USB 3.0 to USB B cable for power supply connection
+1 x 400-point breadboard
+2 x 10k ohm resistors   
 
 ### Componente software
 Arduino IDE https://www.arduino.cc/en/software
 
 ## Setup and Build
 ### Configurare hardware
-Montajul se realizeaza urmand uramtorii pasi:
-  1. se plaseaza pe breadbroard senzorul de umiditate
-  2. se plaseaza pe breadboard cele doua leduri si cate o rezistenta in fata fiecaruia
-  3. se face conexuinea dintre senzor si placa Arduino in urmatorul mod:                
-          a. pinul VCC (+) al senzorului se conecteaza cu pinul 5V al placii                          
-          b. pinul GND (-) al senzorului se conecteaza cu pinul GND al placii                            
-          c. pinul Signal al senzorului se conecteaza cu pinul 7 digital al placii                         
-  4. se face conexiunea dintre leduri si placa Arduino in urmatorul mod:                             
-          a. pinul Anod (+) al ledului se conecteaza la pinul 12 digital al placii                          
-          b. pinul Catod (-) al ledului se conecteaza la pinul GND al placii                               
-  5. se face conexiunea dintre placuta si laptop folosind cablul de alimentare USB 3.0 la USB B                   
+The setup is done following these steps:
+  1. Place the humidity sensor on the breadboard.
+  2. Place the two LEDs and a resistor in front of each on the breadboard.
+  3. Connect the sensor to the Arduino board as follows:
+     a. Connect the VCC (+) pin of the sensor to the 5V pin of the board.
+     b. Connect the GND (-) pin of the sensor to the GND pin of the board.
+     c. Connect the Signal pin of the sensor to the digital pin 7 of the board.
+  4. Connect the LEDs to the Arduino board as follows:
+     a. Connect the Anode (+) pin of the LED to the digital pin 12 of the board.
+     b. Connect the Cathode (-) pin of the LED to the GND pin of the board.
+  5. Connect the board to the laptop using the USB 3.0 to USB B power cable.             
 
 ### Configurare software
-Pentru scrierea codului s-a folosit Arduino IDE in care am setat ca ca port COM4 si ca board de lucru placuta Arduino Uno pe care am folosit-o. Codul este prezentat si specificat in sectiunea "Cod Arduino". Ca sa se poata dispuna de biblioteca C dht.h pentru lucrul cu senzorul de umiditate se dezarhiveaza folderul din arhiva [DHTLib.zip](https://github.com/at-cs-ubbcluj-ro/individual-project-mbir2969/files/11178698/DHTLib.zip). Acest folder care contine fisierele dht.h si dht.c se adauga in C:\Users\YOURUSERNAME\OneDrive\Documente\Arduino\libraries. 
+For writing the code, Arduino IDE was used, where I set the COM4 port and Arduino Uno board as the working board. The code is presented and specified in the "Arduino Code" section. To use the C library dht.h for working with the humidity sensor, you need to extract the folder from the archive [DHTLib.zip](https://github.com/at-cs-ubbcluj-ro/individual-project-mbir2969/files/11178698/DHTLib.zip). This folder containing the files dht.h and dht.c should be added to C:\Users\YOURUSERNAME\OneDrive\Documents\Arduino\libraries.
+
+(Note: Replace "YOURUSERNAME" with your actual username on your computer.)
 
 ## Running
-Pentru functionarea montajului, codul este compilat in Arduino IDE, apoi este incarcat pe placuta. In momentul incarcarii, ledurile placutei se sting si aprind in mod alert. Dupa incarcare se poate urmari in Serial Monitor (accesat din coltul dreapta sus al mediului de dezvoltare Arduino IDE) valoarea umiditatii aerului actualizata la fiecare secunda. Fiecare valoare inregistrata de senzor este procesata in felul urmator: daca umiditatea este mai mare de 65%, in Serial Monitor se afiseaza mesajul "High humidity", iar ledul rosu de pe breadboard lumineaza; daca umiditatea este mai mica sau egala cu 65%, se afieaza mesajul "Low humidity" in Serial Monitor, iar ledul verde de pe breadboard lumineaza. Fiecare dintre cele doua leduri raman aprinse cate o secunda pentru fiecare valoare. 
+To operate the setup, the code is compiled in the Arduino IDE and then uploaded to the board. Upon uploading, the LEDs on the board flash briefly. After the upload, you can monitor the updated air humidity value every second in the Serial Monitor (accessed from the top right corner of the Arduino IDE). Each sensor reading is processed as follows: if the humidity is above 65%, the message "High humidity" is displayed in the Serial Monitor, and the red LED on the breadboard lights up; if the humidity is less than or equal to 65%, the message "Low humidity" is displayed in the Serial Monitor, and the green LED on the breadboard lights up. Each of the two LEDs remains lit for one second for each reading.
 
 ## Demo - Video capture
 
