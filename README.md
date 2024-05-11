@@ -1,4 +1,4 @@
-# Proiect individual - Monitorizarea umiditatii aerului - Moldovan Bogdana Maria 235/1
+# Individual project - Air Humidity Monitoring - Moldovan Bogdana Maria 235/1
 
 ## Project Description
 
