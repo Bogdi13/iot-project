@@ -50,7 +50,7 @@ https://user-images.githubusercontent.com/100224995/230737270-34bc3df8-c30a-461d
 
 
 
-## Cod Arduino
+## Arduino Code
 ```
 #include <dht.h>
 
